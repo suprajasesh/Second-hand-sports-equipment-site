@@ -152,4 +152,66 @@
 }
 #review audio{
   margin-left: 40px;
+} */
+/* .grid-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
+.card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  background-color:  rgb(18, 18, 95) ;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgb(12, 12, 65) ;
+} */
+#review{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: rgb(18, 18, 95) ;
+  color: #fff;
+}
+#review audio{
+  margin-left: 40px;
 }
