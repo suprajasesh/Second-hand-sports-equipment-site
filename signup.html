@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporty!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav id="header">
+        <a href="index.html"><div id="logo"><img src="logo.png"></div></a>
+        <!-- <h3><a href="#">SPORTY</a></h3> -->
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+        </ul>
+    </nav>
+    <form class="forms" name="signup" onsubmit="validate()">
+        <h4>Signup</h4>
+        <br><label>Email:</label>
+        <input type="email" name="email" verified><br><br>
+        <label>Password:</label>
+        <input type="password" name="pwd"><br><br>
+        <div class="button"><input type="submit" value="Submit"></div>
+    </form>    
+</body>
+</html>
+<script>
+    function validate()
+    {
+        let email=document.forms["signup"]["email"].value;
+        let pwd=document.forms["signup"]["pwd"].value;
+        if(email=="")
+            alert("Enter email id");
+        if(email)
+        if(pwd=="")
+            alert("Enter password");
+    }
+</script>

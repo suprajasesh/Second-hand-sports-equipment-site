@@ -7,6 +7,7 @@ body{
 }
 #header {
     background-color:#ffffff;
+    background-color:#ffffff;
     padding: 20px;;
     margin:0px;
     /* display: inline; */
@@ -26,14 +27,14 @@ body{
 }
 #header ul li a{
   /* color:#666633; */
-    color: rgb(18, 18, 95) ;
+    color: rgb(12, 12, 65);
     text-decoration: none;
     margin-left:20px;
     margin-right:20px;
 }
 #header ul li a:hover{
   /* color:#cccc99 */
-  color: rgb(49, 49, 218) ;
+  color: rgb(0, 0, 250);
   text-decoration: none;
   margin-left:20px;
   margin-right:20px;
@@ -48,18 +49,3 @@ body{
   padding: 20px;
   border-radius: 5px;;
 }
-
-.button {
-    display: inline-block;
-    background-color:  rgb(18, 18, 95) ;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: rgb(12, 12, 65) ;
-  }
