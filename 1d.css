@@ -1,0 +1,45 @@
+/* Borders */
+.box {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* Text Effects */
+  .title {
+    text-shadow: 2px 2px #000;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Animation */
+  @keyframes slide {
+    from {
+      margin-left: 0%;
+    }
+    to {
+      margin-left: 100%;
+    }
+  }
+  
+  .slide {
+    animation: slide 2s infinite;
+  }
+  
+  /* Transitions */
+  .btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  

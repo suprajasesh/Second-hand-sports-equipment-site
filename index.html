@@ -6,36 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporty!</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="card.css">
+
 </head>
 <body>
     <nav id="header">
-        <div id="logo"><img src="logo.png"></div>
+        <a href="#"><div id="logo"><img src="logo.png"></div></a>
         <!-- <h3><a href="#">SPORTY</a></h3> -->
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Sign up</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Sell equipment</a></li>
+            <li><a href="search.html">Buy equipment</a></li>
         </ul>
     </nav>
     <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-          <div class="numbertext">1 / 3</div>
-          <img src="bg1.jfif" style="width:100%">
-          <div class="text">Caption Text</div>
+          <img src="bg2.jpg" style="width:100%">
+          <div class="text">Buy or sell any equipment</div>
         </div>
       
         <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
-          <img src="logo.png" style="width:100%">
-          <div class="text">Caption Two</div>
+          <video width="100%" controls autoplay>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video element.
+          </video>
         </div>
       
         <div class="mySlides fade">
-          <div class="numbertext">3 / 3</div>
-          <img src="bg2.jfif" style="width:100%">
-          <div class="text">Caption Three</div>
+          <img src="bg3.jpg" style="width:100%">
+          <div class="text">Verified products</div>
         </div>
       
         <!-- Next and previous buttons -->
@@ -51,37 +53,63 @@
         <span class="dot" onclick="currentSlide(3)"></span>
       </div>
     <!-- <div id="logo"><img src="bg1.jfif"></div> -->
-    <script>
-        let slideIndex = 1;
+    <div class="grid-container">
+      <div class="card">
+          <img src="indoor.jpg" alt="Card Image">
+          <h2>Indoor sports</h2>
+          <p>Chess, Table Tennis, Billards equipment are more..</p>
+          <a href="#" class="button">Read More</a>
+      </div>
+      <div class="card">
+        <img src="outdoor.jpg" alt="Card Image" height="200">
+        <h2>Outdoor sports</h2>
+        <p>Cricket, Football, Tennis, Volleyball and more..</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <div class="card">
+        <img src="gym.jpg" alt="Card Image">
+        <h2>Fitness Equipment</h2>
+        <p>Gym equipment for dumbell, treadmill and others..</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+    </div>
+    <div id="review">
+      Listen to a satisfied customer
+      <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+</body>
+</html>
+
+<script>
+  let slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
 }
-    </script>
-    <h4>One stop destination for all sports equipment needs</h4>
-    <h4>Trusted Sellers</h4>
-</body>
-</html>
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+</script>

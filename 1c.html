@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="1d.css">
+  </head>
+  <body>
+    <h1>HTML5 Example</h1>
+    
+    <h2>Audio Example</h2>
+    <audio controls>
+      <source src="audio_file.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <h2>Video Example</h2>
+    <video width="320" height="240" controls>
+      <source src="video_file.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+    
+    <h2>Form Example</h2>
+    <form action="form_process.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+    
+    <h2>Canvas API Example</h2>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#FF0000";
+      ctx.fillRect(0, 0, 150, 75);
+    </script>
+    
+    <h2>SVG Example</h2>
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+    
+    <h2>Geolocation Example</h2>
+    <p id="demo">Click the button to get your location:</p>
+    <button onclick="getLocation()">Get Location</button>
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      function showPosition(position) {
+        document.getElementById("demo").innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+      }
+    </script>
+    
+  </body>
+</html>
