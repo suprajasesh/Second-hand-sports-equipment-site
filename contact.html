@@ -10,15 +10,6 @@
     <script src="contactus.js"></script>
 </head>
 <body>
-    <nav id="header">
-        <a href="index.html"><div id="logo"><img src="logo.png"></div></a>
-        <!-- <h3><a href="#">SPORTY</a></h3> -->
-        <ul>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#">Sell equipment</a></li>
-            <li><a href="search.html">Buy equipment</a></li>
-        </ul>
-    </nav>
     <form id="contactForm" method="#">
         <h2>Contact Us</h2>
         <label for="name">Name:</label>
@@ -30,7 +21,7 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea><br><br>
       
-        <input type="submit" value="Submit" class="button" style="font-size: 15px;">
+        <input type="submit" value="Submit" class="button" style="font-size: 15px;" onclick="validate()">
         <!-- <button type="submit" class="button" style="font-size: 15px;">Submit</button> -->
     </form>      
 </body>

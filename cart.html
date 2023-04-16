@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporty!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="product.css">
+</head>
+<body>
+    <!-- <h1>Heloooo</h1> -->
+    <h1>Cart Items</h1>
+    <h2 style="margin-left: 175px;">No of Items:{{cart.length}}</h2>
+    <div class="product" ng-repeat="x in cart">
+        <div class="product-image" >
+            <img src="{{x.image}}" alt="{{x.name}}" style="height: 200px; width: 200px; margin-left: 150px;;"/>
+        </div>
+        <div class="product-details">
+            <h2>{{x.name}}</h2>
+            <p>Price: Rs {{x.price}}</p>
+            <p>Years old: {{x.years_old}}</p>
+        </div>
+    </div>
+    <h2 style="text-align: center;">Total cost: Rs {{total_price()}}</h2>
+    <button class="button" style="display: block; margin: 0 auto;">Proceed to Buy</button>
+</body>
+</html>

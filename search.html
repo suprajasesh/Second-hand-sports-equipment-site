@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="card.css">
     <!-- <link rel="stylesheet" type="text/css" href="home.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- <script src="routing.js"></script> -->
 </head>
 <style>
     .grid-container {
@@ -18,36 +20,34 @@
 #search{
     align-items: center;
     justify-content: center;
+    margin-left: 30%
+}
+#search input{
+    height: 25px;;
+    width: 200px;
+    border-radius: 5px;
 }
 </style>
 <body>
-    <nav id="header">
-        <a href="index.html"><div id="logo"><img src="logo.png"></div></a>
-        <!-- <h3><a href="#">SPORTY</a></h3> -->
-        <ul>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#">Sell equipment</a></li>
-            <li><a href="search.html">Buy equipment</a></li>
-        </ul>
-    </nav>
-    <div ng-app="app" ng-controller="appcontroller">
-        <h4 id="search">Search by name:<input type="text" ng-model="name"></h4>
+    <div  ng-controller="appcontroller">
+        <br>
+        <h2 id="search">Search by name: <input type="text" ng-model="name"></h2>
             <div class="grid-container" ng-repeat="x in items | orderBy:'years_old' | filter: name">
                 <div class="card">
                     <img src="indoor.jpg" alt="Card Image">
                     <h2>{{x.name}}</h2>
                     <p>Years old: {{x.years_old}}</p>
-                    <p>Price: {{x.price|currency}}</p>
-                    <a href="#" class="button">Read More</a>
+                    <p>Price: Rs {{x.price}}</p>
+                    <a ng-href="#!search/{{x.pid}}" class="button">Read More</a>
                 </div>
             </div>
     </div>
     <script>
-        var a=angular.module("app",[]);
-             a.controller("appcontroller", function($scope,$http){
-                 $http.get("studentdetails.txt").then(function(response){
-                     $scope.items=response.data;
-                 });
-             });
+        //  var app=angular.module("myApp",['ngRoute']);
+        //      app.controller("appcontroller", function($scope,$http){
+        //          $http.get("products.txt").then(function(response){
+        //              $scope.items=response.data;
+        //          });
+        //      });
     </script>
 </body>
