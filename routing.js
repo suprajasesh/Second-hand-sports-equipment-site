@@ -38,7 +38,7 @@ app.controller("fetchdetails",function($scope,$http,$routeParams,CartService){
     var cart = CartService.getCart();
     $scope.isItemInCart = function(item) {
     for (var i = 0; i < cart.length; i++) {
-            if (cart.pid === item.id) {
+            if (cart[i].pid === item.pid) {
             return true;
             }
         }
