@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporty!</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="home.css">
-    <link rel="stylesheet" type="text/css" href="card.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/card.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="routing.js"></script>
 </head>
 <body ng-app="myApp">
     <nav id="header">
-        <a href="#"><div id="logo"><img src="logo.png"></div></a>
+        <a href="#" ng-click="count=1"><div id="logo"><img src="images/logo.png"></div></a>
+        <!-- <h3><a href="#">SPORTY</a></h3> -->
         <ul>
-            <li><a href="#!contact">Contact Us</a></li>
-            <li><a href="#">Sell equipment</a></li>
-            <li><a href="#!search">Buy equipment</a></li>
+            <li><a href="#!contact" ng-click="count=0">Contact Us</a></li>
+            <li><a href="#!sell" ng-click="count=0">Sell equipment</a></li>
+            <li><a href="#!search" ng-click="count=0">Buy equipment</a></li>
         </ul>
     </nav>
-    <div ng-view></div>
-    <div ng-show="" script="">
+    <div ng-view="!count"></div>
+    <div ng-show="count">
       <div class="slideshow-container">
 
           <!-- Full-width images with number and caption text -->
           <div class="mySlides fade">
-            <img src="bg2.jpg" style="width:100%">
+            <img src="images/bg2.jpg" style="width:100%">
             <div class="text">Buy or sell any equipment</div>
           </div>
         
           <div class="mySlides fade">
-            <video width="100%" controls autoplay>
-              <source src="video.mp4" type="video/mp4">
+            <video width="100%" controls autoplay muted>
+              <source src="images/video.mp4" type="video/mp4">
               Your browser does not support the video element.
             </video>
           </div>
         
           <div class="mySlides fade">
-            <img src="bg3.jpg" style="width:100%">
+            <img src="images/bg3.jpg" style="width:100%">
             <div class="text">Verified products</div>
           </div>
         
@@ -58,28 +60,28 @@
       <!-- <div id="logo"><img src="bg1.jfif"></div> -->
       <div class="grid-container">
         <div class="card">
-            <img src="indoor.jpg" alt="Card Image">
+            <img src="images/indoor.jpg" alt="Card Image">
             <h2>Indoor sports</h2>
             <p>Chess, Table Tennis, Billards equipment are more..</p>
-            <a href="#" class="button">Find More</a>
+            <a href="#" class="button">Read More</a>
         </div>
         <div class="card">
-          <img src="outdoor.jpg" alt="Card Image" height="200">
+          <img src="images/outdoor.jpg" alt="Card Image" height="200">
           <h2>Outdoor sports</h2>
           <p>Cricket, Football, Tennis, Volleyball and more..</p>
-          <a href="#" class="button">Find More</a>
+          <a href="#" class="button">Read More</a>
         </div>
         <div class="card">
-          <img src="gym.jpg" alt="Card Image">
+          <img src="images/gym.jpg" alt="Card Image">
           <h2>Fitness Equipment</h2>
           <p>Gym equipment for dumbell, treadmill and others..</p>
-          <a href="#" class="button">Find More</a>
+          <a href="#" class="button">Read More</a>
         </div>
       </div>
       <div id="review">
         Listen to a satisfied customer
         <audio controls>
-          <source src="audio.mp3" type="audio/mpeg">
+          <source src="images/audio.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
@@ -89,6 +91,19 @@
 
 <script>
   let slideIndex = 1;
+  carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 10000); // Change image every 2 seconds
+}
 showSlides(slideIndex);
 
 // Next/previous controls

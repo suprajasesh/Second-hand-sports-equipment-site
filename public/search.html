@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporty!</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="card.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/card.css">
     <!-- <link rel="stylesheet" type="text/css" href="home.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
@@ -34,7 +34,7 @@
         <h2 id="search">Search by name: <input type="text" ng-model="name"></h2>
             <div class="grid-container" ng-repeat="x in items | orderBy:'years_old' | filter: name">
                 <div class="card">
-                    <img src="indoor.jpg" alt="Card Image">
+                    <img src="images/indoor.jpg" alt="Card Image">
                     <h2>{{x.name}}</h2>
                     <p>Years old: {{x.years_old}}</p>
                     <p>Price: Rs {{x.price}}</p>

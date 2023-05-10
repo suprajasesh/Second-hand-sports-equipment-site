@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporty!</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="product.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
 </head>
 <body>
     <!-- <h1>Heloooo</h1> -->
@@ -14,7 +14,7 @@
     <h2 style="margin-left: 175px;">No of Items:{{cart.length}}</h2>
     <div class="product" ng-repeat="x in cart">
         <div class="product-image" >
-            <img src="{{x.image}}" alt="{{x.name}}" style="height: 200px; width: 200px; margin-left: 150px;;"/>
+            <img src="images/{{x.image}}" alt="{{x.name}}" style="height: 200px; width: 200px; margin-left: 150px;;"/>
         </div>
         <div class="product-details">
             <h2>{{x.name}}</h2>
