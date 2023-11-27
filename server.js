@@ -13,11 +13,20 @@ app.use(bodyParser.urlencoded({
   }));
 app.use(express.static('public'));
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/testdb');
-const db = mongoose.connection;
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri='mongodb+srv://suprajasesh:<KaneWilliamson22%20>@cluster0.mrychgu.mongodb.net/?retryWrites=true&w=majority'
+// mongoose.connect('mongodb://127.0.0.1:27017/testdb');
+const db = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
 
 const Contact = require('./contact_schema');
+const item = require('./item_schema');
+
 console.log(Contact)
 
 // Check for DB connection
@@ -46,51 +55,8 @@ app.post('/success', (req, res) => {
     .catch(err => {
         console.log(err);
     });
-    res.send('Message saved successfully!');
-
-
-
-    const transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: 'supraja2809@gmail.com',
-          pass: 'davschool'
-        }
-      });
-      const { name, email, message } = req.body;
-      // Configure email options
-      const mailOptions = {
-        from: `${name} <${email}>`,
-        to: 'supraja2010341@ssn.edu.in',
-        subject: 'Subject of your email',
-        text: message
-      };
-    
-      // Send email with transporter object
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          console.log(error);
-          res.send('Error sending email');
-        } else {
-          console.log('Email sent: ' + info.response);
-          res.send('Email sent successfully');
-        }
-      });
+    //res.send('Message saved successfully!<br>Message:<br>Name:', data.name,'<br>Email:',data.email,'<br>Message:',data.message);
 });
-
-
-// const newUser = new Contact({
-//     firstname: 'John Doe',
-//   });
-  
-// newUser.save()
-//     .then(() => {
-//     console.log('User saved successfully!');
-//     })
-//     .catch(err => {
-//     console.log(err);
-// });
-
 
 app.post("/getdetails", function (req, res) {   
     Contact.find()
