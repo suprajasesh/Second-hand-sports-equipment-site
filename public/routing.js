@@ -23,11 +23,17 @@ app.config(function ($routeProvider) {
 });
 
   
-app.controller("appcontroller", function($scope,$http){
-    $http.get("products.txt").then(function(response){
-        $scope.items=response.data;
-    });
-});
+app.controller("appcontroller", ['$scope', '$http', function($scope, $http) {
+    $http.get('/getitems')
+      .then(function(response) {
+        console.log(response.data);
+        $scope.items = response.data;
+      })
+      .catch(function(error) {
+        console.error('Error fetching data:', error);
+      });
+  }]
+);
 
 
 app.controller("fetchdetails",function($scope,$http,$routeParams,CartService){

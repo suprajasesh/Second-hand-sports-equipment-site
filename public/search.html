@@ -32,13 +32,14 @@
     <div  ng-controller="appcontroller">
         <br>
         <h2 id="search">Search by name: <input type="text" ng-model="name"></h2>
-            <div class="grid-container" ng-repeat="x in items | orderBy:'years_old' | filter: name">
+            <div class="grid-container" ng-repeat="x in items | orderBy:'yold' | filter: {name: name}">
                 <div class="card">
-                    <img src="images/indoor.jpg" alt="Card Image">
-                    <h2>{{x.name}}</h2>
-                    <p>Years old: {{x.years_old}}</p>
+                    <img ng-src="{{x.imageUrl}}" alt="{{x.item}} Image">
+                    <p>{{x.imageUrl}}</p>
+                    <h2>{{x.item}}</h2>
+                    <p>Years old: {{x.yold}}</p>
                     <p>Price: Rs {{x.price}}</p>
-                    <a ng-href="#!search/{{x.pid}}" class="button">Read More</a>
+                    <a ng-href="#!search/{{x._id}}" class="button">Read More</a>
                 </div>
             </div>
     </div>
