@@ -39,6 +39,6 @@ db.on('error', function (err) {
 
 app.use('/', routes); // Use the router
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("Server started on localhost:3000");
 });
