@@ -13,14 +13,5 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.7",
     "serverless-http": "^3.2.0"
-  },
-  "devDependencies": {
-    "@nx/netlify": "^17.2.3"
-  },
-  "name": "sporty-second-hand-sports",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
   }
 }

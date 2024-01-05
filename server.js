@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const serverless = require('serverless-http');
 //const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const routes = require('./routes'); // Import the router
@@ -38,7 +37,8 @@ db.on('error', function (err) {
   console.log(err);
 });
 
-app.use('/.netlify/functions/server', routes); // Use the router
+app.use('/', routes); // Use the router
 
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(process.env.PORT || 3000, function () {
+  console.log("Server started on localhost:3000");
+});
