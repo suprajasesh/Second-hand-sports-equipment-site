@@ -1,0 +1,8 @@
+[build]
+  command = "npm install && npm run build" # Adjust the build command based on your project needs
+  functions = "functions" # Specify the functions directory
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
