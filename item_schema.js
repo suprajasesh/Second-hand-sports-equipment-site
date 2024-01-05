@@ -7,7 +7,10 @@ let itemSchema = mongoose.Schema({
     yold: Number,
     price: Number,
     desc: String,
-    image: { type: mongoose.Schema.Types.ObjectId, ref: 'Image' },
+    image: {
+        data: Buffer,
+        contentType: String
+      },
     sold: Boolean
 });
 
