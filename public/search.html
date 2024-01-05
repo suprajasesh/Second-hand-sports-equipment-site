@@ -34,9 +34,9 @@
         <h2 id="search">Search by name: <input type="text" ng-model="name"></h2>
             <div class="grid-container" ng-repeat="x in items | orderBy:'yold' | filter: {name: name}">
                 <div class="card">
-                    <img ng-src="{{x.imageUrl}}" alt="{{x.item}} Image">
-                    <p>{{x.imageUrl}}</p>
+                    <img ng-src="/uploads/{{x.image.filename}}" alt="{{x.item}} Image">
                     <h2>{{x.item}}</h2>
+                    <p>/uploads/{{x.image.filename}}</p>
                     <p>Years old: {{x.yold}}</p>
                     <p>Price: Rs {{x.price}}</p>
                     <a ng-href="#!search/{{x._id}}" class="button">Read More</a>
