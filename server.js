@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
-const uri = 'mongodb+srv://suprajasesh:KaneWilliamson22%23@cluster0.roakn3c.mongodb.net/';
+
 mongoose.connect(uri, { useNewUrlParser: true}
     );
 const db = mongoose.connection;
